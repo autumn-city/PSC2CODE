@@ -8,12 +8,13 @@ from sklearn.metrics import confusion_matrix, f1_score, precision_score, recall_
 import json
 sys.path.append('..')
 from setting import *
+from keras.models import load_model
 
 
 label_dir = "Labeling/labels"
 
 
-def predict_video(video, model):
+def predict_video(video, model_address):
     # model = keras.models.load_model('weights.h5')
     frame_labels = []
     if os.path.exists('%s/%s.json' % (label_dir, video)):
@@ -25,6 +26,7 @@ def predict_video(video, model):
             frame_labels.append((frame, labels[idx][0]))
     else:
         images, filter_frames = load_video_images(video, image_dir=images_dir)
+        model = load_model(model_address)
 
         predicted = model.predict(np.array(images))
 

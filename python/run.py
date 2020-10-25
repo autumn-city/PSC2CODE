@@ -6,6 +6,7 @@ from video_tagging.predict import predict_video
 from video import CVideo
 from OCR.image_ocr import google_ocr
 from OCR.adjust_ocr import GoogleOCRParser
+from keras.models import load_model
 
 def get_video_info(video_hash):
     db = DBImpl({'url': os.path.join(playlists_dir, 'videos.db')})
@@ -24,12 +25,10 @@ if __name__ == "__main__":
     print(video_hash, video_name, video_playlist)
 
     video = video_name + '_' + video_hash # The name of video is in format of its title + hash
-    print(video)
     video_mp4_path = os.path.join(video_dir, video_playlist, video+".mp4")
 
     # preprocess if not
-    print(images_dir)
-    if not os.path.exists(os.path.join(images_dir, video)): 
+    if not os.path.exists(os.path.join(images_dir, video)):
         extract_frames(video_mp4_path, os.path.join(images_dir, video))
         diff_frames(os.path.join(images_dir, video), thre=0.05, metric="NRMSE")
 
