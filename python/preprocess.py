@@ -13,7 +13,8 @@ def extract_frames(video_path, out_folder):
     filename = filename[0:idx]
 
     # ffmpeg -i "$file" -r 1 -f image2 "$images/$filename/%d.png" -nostdin
-    cmds = ["ffmpeg", "-i", video_path, "-r", "1", "-f", "image2", out_folder+"/%d.png", "-nostdin"]
+ #   cmds = ["ffmpeg", "-i", video_path, "-r", "1", "-f", "image2", out_folder+"/%d.png", "-nostdin"]
+    cmds = ["ffmpeg", "-i", video_path, "an", "-f", "image2", out_folder + "/%d.png"]
     
     print ' '.join(cmds)
     subprocess.call(cmds)
