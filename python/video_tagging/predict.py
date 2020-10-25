@@ -9,6 +9,7 @@ import json
 sys.path.append('..')
 from setting import *
 
+
 label_dir = "Labeling/labels"
 
 
@@ -24,7 +25,7 @@ def predict_video(video, model):
             frame_labels.append((frame, labels[idx][0]))
     else:
         images, filter_frames = load_video_images(video, image_dir=images_dir)
-        print images
+
         predicted = model.predict(np.array(images))
 
         for idx, frame in enumerate(filter_frames):
