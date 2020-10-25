@@ -20,11 +20,11 @@ def json_txt(dic_json):
     if isinstance(dic_json,dict): #判断是否是字典类型isinstance 返回True false
         for key in dic_json:
             if isinstance(dic_json[key],dict):#如果dic_json[key]依旧是字典类型
-                print("****key--：%s value--: %s"%(key,dic_json[key]))
+                print("****key--:%s value--: %s"%(key,dic_json[key]))
                 json_txt(dic_json[key])
                 dic[key] = dic_json[key]
             else:
-                print("****key--：%s value--: %s"%(key,dic_json[key]))
+                print("****key--:%s value--: %s"%(key,dic_json[key]))
                 dic[key] = dic_json[key]
 
 def read_Google_Vision_result(json_file):
