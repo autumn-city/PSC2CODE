@@ -35,8 +35,7 @@ if __name__ == "__main__":
 
     # predict whether a frame is valid or not
     if not os.path.exists(os.path.join(images_dir, video, 'predict.txt')):
-        print("video is "+video)
-        predict_video(os.path.join(images_dir, video), model_file)
+        predict_video(video, model_file)
     
     if not os.path.exists(os.path.join(lines_dir, video)):
         os.mkdir(os.path.join(lines_dir, video))
