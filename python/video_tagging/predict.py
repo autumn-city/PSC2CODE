@@ -28,6 +28,7 @@ def predict_video(video, model_address):
         images, filter_frames = load_video_images(video, image_dir=images_dir)
         model = load_model(model_address)
 
+
         predicted = model.predict(np.array(images))
 
         for idx, frame in enumerate(filter_frames):
@@ -44,7 +45,7 @@ def predict_video(video, model_address):
 
 def load_model(model_file):
     # return keras.models.load_model('weights-new.h5')
-    return keras.models.load_model.load_weights(model_file)
+    return keras.models.load_model(model_file)
 
 
 def main():
