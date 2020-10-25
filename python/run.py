@@ -38,6 +38,7 @@ if __name__ == "__main__":
         predict_video(video, model_file)
     
     if not os.path.exists(os.path.join(lines_dir, video)):
+        print("test for the lines dir")
         os.mkdir(os.path.join(lines_dir, video))
         
         cvideo = CVideo(video)
@@ -49,6 +50,7 @@ if __name__ == "__main__":
         cvideo.crop_rects()
     
     # OCR and the results are stored into folder 'GoogleOCR'
+    print("test for the googleocr dir")
     if not os.path.exists(os.path.join(ocr_dir, video)):
         google_ocr(video_name, video_hash)
 
