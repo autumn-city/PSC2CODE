@@ -13,12 +13,29 @@ from audio import translate_srt_script
 from util import *
 from setting import *
 
+#test JSON
+dic ={}
+
+def json_txt(dic_json):
+    if isinstance(dic_json,dict): #判断是否是字典类型isinstance 返回True false
+        for key in dic_json:
+            if isinstance(dic_json[key],dict):#如果dic_json[key]依旧是字典类型
+                print("****key--：%s value--: %s"%(key,dic_json[key]))
+                json_txt(dic_json[key])
+                dic[key] = dic_json[key]
+            else:
+                print("****key--：%s value--: %s"%(key,dic_json[key]))
+                dic[key] = dic_json[key]
 
 def read_Google_Vision_result(json_file):
     # print json_file
     with open(json_file) as fin:
         res = json.load(fin)
-        print(res.get('volumeInfo', default=None))
+
+        #TEST
+        json_txt(res)
+        print("dic ---: "+str(dic))
+
         if 'fullTextAnnotation' not in res['responses'][0]:
             return []
 
