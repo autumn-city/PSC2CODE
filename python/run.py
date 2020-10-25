@@ -32,8 +32,9 @@ if __name__ == "__main__":
         diff_frames(os.path.join(images_dir, video), thre=0.05, metric="NRMSE")
 
     # predict whether a frame is valid or not
-    if not os.path.exists(os.path.join(images_dir, video, 'predict.txt')): 
-        predict_video(os.path.join(images_dir, video), model_file="video_tagging/weights.h5")
+    if not os.path.exists(os.path.join(images_dir, video, 'predict.txt')):
+
+        predict_video(os.path.join(images_dir, video), model_file)
     
     if not os.path.exists(os.path.join(lines_dir, video)):
         os.mkdir(os.path.join(lines_dir, video))
