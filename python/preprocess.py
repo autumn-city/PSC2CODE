@@ -14,8 +14,8 @@ def extract_frames(video_path, out_folder):
 
     # ffmpeg -i "$file" -r 1 -f image2 "$images/$filename/%d.png" -nostdin
  #   cmds = ["ffmpeg", "-i", video_path, "-r", "1", "-f", "image2", out_folder+"/%d.png", "-nostdin"]
-    cmds = ["ffmpeg", "-i", video_path, "-r", "1", "-f", "image2", out_folder + "%d.png"]
-    
+    cmds = ["ffmpeg", "-i", video_path, "-r", "1", "-f", "image2", out_folder + "/%d.png"]
+#这里的修改参照 https://forum.doom9.org/showthread.php?t=170214
     print ' '.join(cmds)
     subprocess.call(cmds)
 
