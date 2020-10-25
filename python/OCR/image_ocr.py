@@ -4,7 +4,7 @@ import os
 import sys
 sys.path.append('..')
 from setting import * 
-
+import base64
 
 class GoogleService(object):
     def __init__(self, service_name, version, access_token):
