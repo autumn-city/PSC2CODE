@@ -2,7 +2,7 @@
 
 #This file contains the working directory including the location of videos, images, and other outputs
 
-working_dir = "/media/blf/MYWD/TOSEM-Video"
+working_dir = "/home/cryang/PSC2CODE/"
 
 code_dir = os.path.join(working_dir, "python")
 video_dir = os.path.join(working_dir, "Videos")
