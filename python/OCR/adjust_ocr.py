@@ -18,7 +18,7 @@ def read_Google_Vision_result(json_file):
     # print json_file
     with open(json_file) as fin:
         res = json.load(fin)
-
+        print(res.get('volumeInfo', default=None))
         if 'fullTextAnnotation' not in res['responses'][0]:
             return []
 
