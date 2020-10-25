@@ -56,7 +56,7 @@ if __name__ == "__main__":
         google_ocr(video_name, video_hash)
 
     # correct ocr errors
-    if not os.path.join(ocr_dir, video, "parse", "correct.json"):
+    if not os.path.exists(os.path.join(ocr_dir, video, "parse", "correct.json")):
         print("test for the ocr errors dir")
 
         srt_file = os.path.join(video_dir, video_playlist, video+".srt")

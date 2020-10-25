@@ -72,7 +72,7 @@ def google_ocr(video_name, video_hash):
         if os.path.exists(outfile):
             continue
 
-        print img_path
+        #print img_path
         try:
             extract_text(img_path, outfile)
         except Exception as e:
