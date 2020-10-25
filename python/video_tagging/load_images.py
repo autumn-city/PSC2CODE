@@ -36,6 +36,7 @@ def load_images_json(video, target_size=(300, 300, 3), label_dir="Labeling/label
 
 def load_video_images(video, target_size=(300, 300, 3), image_dir="../Images"):
     images = []
+    print image_dir
     folder = image_dir + '/' + video
     with open(os.path.join(folder, 'frames.txt')) as fin:
         lines = fin.readlines()
