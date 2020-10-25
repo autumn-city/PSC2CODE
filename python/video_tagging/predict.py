@@ -44,7 +44,7 @@ def predict_video(video, model_address):
 
 def load_model(model_file):
     # return keras.models.load_model('weights-new.h5')
-    return keras.models.load_model(model_file)
+    return keras.models.load_model.load_weights(model_file)
 
 
 def main():
