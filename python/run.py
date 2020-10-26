@@ -25,6 +25,7 @@ if __name__ == "__main__":
     print(video_hash, video_name, video_playlist)
 
     video = video_name + '_' + video_hash # The name of video is in format of its title + hash
+    print(video)
     video_mp4_path = os.path.join(video_dir, video_playlist, video+".mp4")
 
     # preprocess if not
