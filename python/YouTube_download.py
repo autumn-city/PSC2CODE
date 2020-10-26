@@ -141,7 +141,7 @@ def get_resolution():
 
 
 def test():
-    url = "https://www.youtube.com/watch?v=7MBgaF8wXls"
+    url = "https://www.youtube.com/watch?v=eIrMbAQSU34"
     yt = YouTube(url)
     caption = yt.captions.all()[0]
     xml_source = caption.xml_captions
