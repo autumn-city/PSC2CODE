@@ -37,7 +37,7 @@ def read_Google_Vision_result(json_file):
         print("dic is"+str(dic).encode("utf-8"))
         #test for responses
         if 'responses' in res:
-            print 'responses', res.['responses']
+            print 'responses', res['responses']
 
         #
         if 'fullTextAnnotation' not in res['responses'][0]:
