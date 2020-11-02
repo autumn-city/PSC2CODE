@@ -26,45 +26,44 @@ if __name__ == "__main__":
 
     # video = video_name + '_' + video_hash # The name of video is in format of its title + hash
     #test
-    for i in range(1,14):
-        video_playlist = "test"+str(i)
-        video = 'What is cross entropy- cross entropy cost function-cross entropy loss'
+    video_playlist = "t2"
+    video = 'Deep Learning- Categorical Cross-Entropy Loss Function'
 
-        print(video)
-        video_mp4_path = os.path.join(video_dir, video_playlist, video+".mp4")
+    print(video)
+    video_mp4_path = os.path.join(video_dir, video_playlist, video+".mp4")
 
-        # preprocess if not
-        if not os.path.exists(os.path.join(images_dir, video)):
-            extract_frames(video_mp4_path, os.path.join(images_dir, video))
-            diff_frames(os.path.join(images_dir, video), thre=0.05, metric="NRMSE")
+    # preprocess if not
+    if not os.path.exists(os.path.join(images_dir, video)):
+        extract_frames(video_mp4_path, os.path.join(images_dir, video))
+        diff_frames(os.path.join(images_dir, video), thre=0.05, metric="NRMSE")
 
-        # predict whether a frame is valid or not
-        if not os.path.exists(os.path.join(images_dir, video, 'predict.txt')):
-            print("model file is "+model_file)
-            predict_video(video, model_file)
+    # predict whether a frame is valid or not
+    if not os.path.exists(os.path.join(images_dir, video, 'predict.txt')):
+        print("model file is "+model_file)
+        predict_video(video, model_file)
 
-        if not os.path.exists(os.path.join(lines_dir, video)):
-            print("test for the lines dir")
-            os.mkdir(os.path.join(lines_dir, video))
+    if not os.path.exists(os.path.join(lines_dir, video)):
+        print("test for the lines dir")
+        os.mkdir(os.path.join(lines_dir, video))
 
-            cvideo = CVideo(video)
-            # detect boundingx boxes and store the information of lines and rects into folder 'Lines'
-            cvideo.cluster_lines()
-            cvideo.adjust_lines()
-            cvideo.detect_rects()
-            # crop the bounding boxes of frames into folder 'Crops'
-            cvideo.crop_rects()
+        cvideo = CVideo(video)
+        # detect boundingx boxes and store the information of lines and rects into folder 'Lines'
+        cvideo.cluster_lines()
+        cvideo.adjust_lines()
+        cvideo.detect_rects()
+        # crop the bounding boxes of frames into folder 'Crops'
+        cvideo.crop_rects()
 
-        # OCR and the results are stored into folder 'GoogleOCR'
-        # if not os.path.exists(os.path.join(ocr_dir, video)):
-        #     print("test for the google dir")
-        #
-        #     google_ocr(video_name, video_hash)
+    # OCR and the results are stored into folder 'GoogleOCR'
+    # if not os.path.exists(os.path.join(ocr_dir, video)):
+    #     print("test for the google dir")
+    #
+    #     google_ocr(video_name, video_hash)
 
-        # correct ocr errors
-        # if not os.path.exists(os.path.join(ocr_dir, video, "parse", "correct.json")):
-        #     print("test for the ocr errors dir")
-        #
-        #     srt_file = os.path.join(video_dir, video_playlist, video+".srt")
-        #     parser = GoogleOCRParser(video, srt_file)
-        #     parser.correct_words()
+    # correct ocr errors
+    # if not os.path.exists(os.path.join(ocr_dir, video, "parse", "correct.json")):
+    #     print("test for the ocr errors dir")
+    #
+    #     srt_file = os.path.join(video_dir, video_playlist, video+".srt")
+    #     parser = GoogleOCRParser(video, srt_file)
+    #     parser.correct_words()
