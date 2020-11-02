@@ -26,8 +26,8 @@ if __name__ == "__main__":
 
     # video = video_name + '_' + video_hash # The name of video is in format of its title + hash
     #test
-    video_playlist = "t7"
-    video = 'PyTorch Tutorial 13 - Feed-Forward Neural Network'
+    video_playlist = "t8"
+    video = 'Loss Functions - EXPLAINED!'
 
     print(video)
     video_mp4_path = os.path.join(video_dir, video_playlist, video+".mp4")
