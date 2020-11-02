@@ -26,8 +26,8 @@ if __name__ == "__main__":
 
     # video = video_name + '_' + video_hash # The name of video is in format of its title + hash
     #test
-    video_playlist = "t5"
-    video = 'What is cross entropy- cross entropy cost function-cross entropy loss'
+    video_playlist = "t6"
+    video = 'Add Dropout Regularization to a Neural Network in PyTorch'
 
     print(video)
     video_mp4_path = os.path.join(video_dir, video_playlist, video+".mp4")
