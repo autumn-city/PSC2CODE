@@ -45,6 +45,7 @@ class CVideo:
 
     def cluster_lines(self):
         lines = []
+        print(images)
         for idx, image in enumerate(self.images):
             for line in image.v_long_lines:
                 lines.append(line + [idx])
