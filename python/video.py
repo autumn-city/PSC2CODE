@@ -54,7 +54,10 @@ class CVideo:
 
         print 'clustering lines...'
         dbscan = DBSCAN(eps=self.config['eps1'], min_samples=len(self.images)*0.1, metric=hv_line_overlap_sim)
+        print(lines)
         clusters = dbscan.fit(np.array(lines))
+        #test
+        print(clusters)
 
         blank_image = np.zeros((self.height, self.width, 3), np.uint8)
 
