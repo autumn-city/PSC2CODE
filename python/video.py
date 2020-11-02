@@ -49,6 +49,7 @@ class CVideo:
             print(idx)
             print(image)
             for line in image.v_long_lines:
+                print("line in for is ")
                 print(line + [idx])
                 lines.append(line + [idx])
 
