@@ -21,10 +21,14 @@ def get_video_info(video_hash):
 if __name__ == "__main__":
     video_hash = 'GnLtvmeGAWA'
 
-    video_hash, video_name, video_playlist = get_video_info(video_hash)
-    print(video_hash, video_name, video_playlist)
+    # video_hash, video_name, video_playlist = get_video_info(video_hash)
+    # print(video_hash, video_name, video_playlist)
 
-    video = video_name + '_' + video_hash # The name of video is in format of its title + hash
+    # video = video_name + '_' + video_hash # The name of video is in format of its title + hash
+    #test
+    video_playlist = "test"
+    video = 'What is cross entropy- cross entropy cost function-cross entropy loss'
+
     print(video)
     video_mp4_path = os.path.join(video_dir, video_playlist, video+".mp4")
 
