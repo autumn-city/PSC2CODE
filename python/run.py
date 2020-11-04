@@ -55,15 +55,15 @@ if __name__ == "__main__":
         cvideo.crop_rects()
 
     # OCR and the results are stored into folder 'GoogleOCR'
-    # if not os.path.exists(os.path.join(ocr_dir, video)):
-    #     print("test for the google dir")
-    #
-    #     google_ocr(video_name, video_hash)
+    if not os.path.exists(os.path.join(ocr_dir, video)):
+        print("test for the google dir")
+
+        google_ocr(video_name, video_hash)
 
     # correct ocr errors
-    # if not os.path.exists(os.path.join(ocr_dir, video, "parse", "correct.json")):
-    #     print("test for the ocr errors dir")
-    #
-    #     srt_file = os.path.join(video_dir, video_playlist, video+".srt")
-    #     parser = GoogleOCRParser(video, srt_file)
-    #     parser.correct_words()
+    if not os.path.exists(os.path.join(ocr_dir, video, "parse", "correct.json")):
+        print("test for the ocr errors dir")
+
+        srt_file = os.path.join(video_dir, video_playlist, video+".srt")
+        parser = GoogleOCRParser(video, srt_file)
+        parser.correct_words()

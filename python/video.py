@@ -75,7 +75,7 @@ class CVideo:
             line_indexes = [idx for idx, l in enumerate(clusters.labels_) if l == i]
             color = (random.randint(0, 255), random.randint(0, 255), random.randint(0, 255))
 
-            max_len = 0
+            max_len = 0/
             min_center_distance = max(self.width, self.height)
             longest = None
             closest = None
