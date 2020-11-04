@@ -27,6 +27,7 @@ if __name__ == "__main__":
     # video = video_name + '_' + video_hash # The name of video is in format of its title + hash
     #test
     video_playlist = "t8"
+    video_name = 'Loss Functions - EXPLAINED!'
     video = 'Loss Functions - EXPLAINED!'
 
     print(video)
